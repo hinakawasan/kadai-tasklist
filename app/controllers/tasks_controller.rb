@@ -32,7 +32,7 @@ class TasksController < ApplicationController
     
     if @task.update(task_params)
       flash[:success] = 'タスクを更新しました。'
-      redirect_to @task
+      redirect_to root_path
     else
       flash.now[:danger] = 'タスクの更新に失敗しました。'
       render :edit
@@ -43,7 +43,7 @@ class TasksController < ApplicationController
     
     @task.destroy
     flash[:success] = 'タスクを削除しました。'
-    redirect_to tasks_url
+    redirect_to root_url
   end
   
   private
